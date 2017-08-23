@@ -1,32 +1,33 @@
 Specifications:
 
 * Click button to start new game
-  * input: [click start new game button]
+  * input: click start new game button
   * output: scores reset to 0
 
 * Random number is generated for player one
-  * input: [First player clicks dice button]
+  * input: click 'roll'
   * output: 3
 
-* While current player's turn, other player's button is disabled
-  * input:
-  * output:
+* Total score increases each roll
+  * input: 5, 4
+  * output: 9
 
-* Current player has option to pass
-    * input: [click pass button]
-    * output: switch player
 
-* If output is '1', player's score resets and switch player
-  * input: 1
-  * output: score resets to 0, player is switched
+* If output is '1', player's current turn's score is '0' and players are switched
+  * input: roll is '1'
+  * output: current turn's score: 0; total score: 9; players switch
 
-* When players switch
-  * input:
+* Current player has option to pass/hold
+  * input: click 'pass'
+  * output: display "Next Player"
+
+* Switch player
+  * input: click 'pass'
   * output: display "Next Player"
 
 * Whoever gets to 21 or higher, win
   * input: score is 21 or higher
-  * output: display "You Won" message and "You Lost"
+  * output: display "You Won" message
 
 * Loser player receives "You Lost" message
   * input:
