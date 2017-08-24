@@ -9,29 +9,35 @@
   <title>Pig Dice</title>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div id="dice"></div>
-        <button class="roll">roll</button>
-        <button class="pass">pass</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="player1 activeClass">
-          <h3>Player1</h3>
-          <p id="p1-results"></p>
-          <div>Total Score: <span id="p1-total"></span></div>
-          <div>Current Score: <span id="p1-current"></span></div>
+  <div class="outer-wrapper">
+    <div class="body-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="top-content">
+            <div id="dice"></div>
+            <button class="roll">roll</button>
+            <button class="pass">pass</button>
+          </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="player2">
-          <h3>Player2</h3>
-          <p id="p2-results"></p>
-          <div>Total Score: <span id="p2-total"></span></div>
-          <div>Current Score: <span id="p2-current"></span></div>
+      <div class="bottom-content">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="player1">
+              <h3>Player1</h3>
+              <p id="p1-results"></p>
+              <div>Total: <span id="p1-total"></span></div>
+              <div>Current: <span id="p1-current"></span></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="player2">
+              <h3>Player2</h3>
+              <p id="p2-results"></p>
+              <div>Total: <span id="p2-total"></span></div>
+              <div>Current: <span id="p2-current"></span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

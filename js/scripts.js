@@ -7,7 +7,7 @@ function Player(name){
 }
 
 function Dice(){
-  this.value = 0;
+  this.value = 1;
 }
 
 //Add constructor Methods
@@ -60,12 +60,14 @@ $(function(){
       $('#p2-current').text(player2.turnTotal);
 
       if(isP1Turn){
-        var check = $("#p1-results").text("You Win!");
-        console.log(check);
+        $("#p1-results").text("You Win!");
+        var check1 = $('#dice').show().text("Player 1 Wins!");
+        console.log(check1);
         $("#p2-results").text("You Lose!");
       } else {
         $("#p1-results").text("You Lose!");
-        var check2 = $("#p2-results").text("You Win!");
+        $("#p2-results").text("You Win!");
+        var check2 = $('#dice').show().text("Player 2 Wins!");
         console.log(check2);
       }
     } else {
@@ -86,7 +88,8 @@ $(function(){
     // $('.player1 .player2').toggleClass('activeClass');
   }
   function updateGame(){
-    $('#dice').html(die.value);
+    // var imgDice = $('#dice').html(die.value);
+    $('#dice').html('<img src="img/' + die.value + '.png" alt="dice">');
     $('#p1-total').text(player1.score);
     $('#p1-current').text(player1.turnTotal);
     $('#p2-total').text(player2.score);

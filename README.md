@@ -1,3 +1,11 @@
+# _Pig Dice_
+
+#### By _**Luciano Oliveira and Safiy Cham, 08/24/2017**_
+
+## Description
+
+Pig Dice is a game of risk and greed. Players take turns rolling a die. When the current player 'hold', the points accumulated during the current player's turn are added to his or her total points. If a roll gives a '1', points from 
+
 Specifications:
 
 * Click button to start new game

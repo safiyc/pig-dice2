@@ -1,7 +1,48 @@
 .activeClass {
-  background-color: green;
+  background-color: rgba(165, 192, 209, .50);
 }
 
-.inactiveClass {
-  background-color: red;
+body {
+  background-size: cover;
+  background-image: url("../img/bg-pink.jpg");
+}
+
+img {
+  width: 200px;
+}
+
+/*button {
+  margin: 2vh 1vw 2vh;
+}*/
+
+.top-content {
+  background-color: rgba(165, 192, 209, .50);
+  text-align: center;
+  height: 26vh;
+  padding-top: 15%;
+}
+
+.bottom-content {
+  background-color: rgba(165, 192, 209, .50);
+  margin-top: 15px;
+}
+
+html, body {
+  height: 100vh;
+}
+
+.outer-wrapper {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player1 {
+  /*margin-left: 20px;*/
+  padding: 10px;
+}
+.player2 {
+  /*margin-left: 20px;*/
+  padding: 10px;
 }
