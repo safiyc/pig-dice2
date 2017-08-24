@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="js/jquery.js" charset="utf-8"></script>
-  <script src="js/scripts.js" charset="utf-8"></script>
-  <!-- <script src="js/2.js" charset="utf-8"></script> -->
+
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>Pig Dice</title>
@@ -25,18 +24,21 @@
       <div class="col-sm-6">
         <div class="player1">
           <h3>Player1</h3>
-          <div class="p1-scoreboard">Total Score: <span id="p1-score"></span></div>
-          <div class="p1-current-score">Current Score: </div>
+          <p id="p1-results"></p>
+          <div>Total Score: <span id="p1-total"></span></div>
+          <div>Current Score: <span id="p1-current"></span></div>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="player2">
           <h3>Player2</h3>
-          <div class="p2-scoreboard">Total Score: </div>
-          <div class="p2-current-score">Current Score: </div>
+          <p id="p2-results"></p>
+          <div>Total Score: <span id="p2-total"></span></div>
+          <div>Current Score: <span id="p2-current"></span></div>
         </div>
       </div>
     </div>
   </div>
+  <script src="js/scripts.js" charset="utf-8"></script>
 </body>
 </html>
