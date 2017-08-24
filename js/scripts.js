@@ -66,10 +66,15 @@ $(function(){
   });
 
   function switchTurn(){
-    isP1Turn = !isP1Turn;
+    if(isP1Turn = !isP1Turn) {
+      $('.player2').toggleClass('activeClass');
+      $('.player1').toggleClass('inactiveClass');
+    } else {
+      $('.player2').toggleClass('inactiveClass');
+      $('.player1').toggleClass('activeClass');
+    }
     //some sort of toggle
     // $('.player1 .player2').toggleClass('activeClass');
-    $('.player2').toggleClass('activeClass')
   }
   function updateGame(){
     $('#dice').html(die.value);
