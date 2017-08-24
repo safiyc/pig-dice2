@@ -1,114 +1,90 @@
 //Business Logic
-// function Player1 (player, currentScore, totalScore) {
-//   this.player = player1Div;
-//   this.currentScore = currentScore;
-//   this.totalScore = totalScore;
-// }
-
-
-// function game(){
-//   total = rollDice();
-//   console.log('this is total:', total);
-//   return total;
-// }
-//console.log('calling game:', game());
-
-function player1(){
-  currentScore = 0;
-  totalScore = 0;
-  currentScore = currentScore + diceValue;
-  return currentScore;
+//Add player object
+function Player(name){
+  this.name = name;
+  this.score = 0;
+  this.turnTotal = 0;
 }
 
-//
-// Player1.prototype.p1ScoreBoard = function (total) {
-//   this.total += total;
-// }
-//
-// console.log(Player1);
-
-function rollDice(min, max){
-  min = 1;
-  max = 6;
-  diceValue  = Math.ceil(Math.random() * max-min) + min;
-  return diceValue;
+function Dice(){
+  this.value = 1;
 }
 
+//Add constructor Methods
+Dice.prototype.roll = function(){
+  this.value = Math.floor(Math.random() * 6) + 1;
+}
 
+Player.prototype.addTurnToScore = function(){
+  this.score += this.turnTotal
+}
 
+$(function(){
+  var scoreToWin = 50;
+  var die = new Dice();
+  var player1 = new Player("player 1");
+  var player2  = new Player("player 2");
+  var isP1Turn = true;
 
+  updateGame();
 
+  $(".roll").click(function(){
+    die.roll();
+    if(die.value === 1){
+      getActivePlayer().turnTotal = 0;
+      switchTurn();
+    } else {
+      getActivePlayer().turnTotal += die.value;
+    }
+    updateGame();
+  });
 
-//function to start new gamer, resets start new game
+  $("button.pass").click(function(){
+    getActivePlayer().addTurnToScore();
+    getActivePlayer().turnTotal = 0;
 
-/*function
+    if(getActivePlayer().score >= scoreToWin){
+      $("#p1-score").css('background-color', red);
+      $("#p1-score").css('background-color', red);
+      $('#dice').hide();
+      $('#p1-total').text(player1.score);
+      $('#p1-current').text(player1.turnTotal);
+      $('#p2-total').text(player2.score);
+      $('#p2-current').text(player2.turnTotal);
 
-    Player1 rolls dice
-    if (!1) {
-     add to player1 currentScore
-     if player press hold
-      add to totalScore
-      pass the turn to player2
-  } else {
-    if(1){
-    reset player1 currentScore to 0
-    pass the turn to player2
+      if(isP1Turn){
+        $("#p1-results").text("You Win!");
+        $("#p2-results").text("You Lose!");
+      } else {
+        $("#p1-results").text("You Lose!");
+        $("#p2-results").text("You Win!");
+      }
+    } else {
+      switchTurn();
+      updateGame();
+    }
+  });
+
+  function switchTurn(){
+    isP1Turn = !isP1Turn;
+    //some sort of toggle
+    // $('.player1 .player2').toggleClass('activeClass');
+    $('.player2').toggleClass('activeClass')
   }
-}
- */
+  function updateGame(){
+    $('#dice').html(die.value);
+    $('#p1-total').text(player1.score);
+    $('#p1-current').text(player1.turnTotal);
+    $('#p2-total').text(player2.score);
+    $('#p2-current').text(player2.turnTotal);
+  }
 
- /*function
-     Player2 rolls dice
-     if (!1) {
-      add to player2 currentScore
-      if player press hold
-       add to player2 totalScore
-       pass the turn to player1
-   } else {
-     if(1){
-     reset player2 currentScore to 0
-     pass the turn to player1
-   }
- }
-  */
+  function getActivePlayer(){
+    if(isP1Turn) {
+      return player1;
+    } else {
+      return player2;
+    }
+  }
 
-
-//Front End Logic
-$(document).ready(function(){
-    var start = $(".start");
-    var roll = $(".roll");
-    var pass = $(".pass");
-    var p1ScoreBoard = $(".p1-scoreboard");
-    var p2ScoreBoard = $(".p2-scoreboard");
-    var p1CurrentScore = $("#p1-score");
-    var p2CurrentScore = $("#p2-score");
-    player1Div = $('.player1');
-    player2Div = $('.player2');
-
-
-    $(".roll").click(function(){
-      $('#dice').text(rollDice());
-      console.log('diceValue: ', diceValue);
-      // console.log('currentScore:', currentScore);
-      // p1CurrentScore.text(player1());
-      console.log('player1:', player1());
-      // var currentTotal = new Player(currentDice);
-      // players[currentDice] = currentTotal;
-    });
-
-    function startGame(){
-      $(start).click(function(){
-        p1ScoreBoard.text(0);
-        p2ScoreBoard.text(0);
-        p1CurrentScore.text(0);
-        p2CurrentScore.text(0);
-      });
-      document.turn === player1Div;
-    };
-    startGame();
-
-    // var player1Obj = new Player(player1Div);
-    // var player2Obj = new Player(player1Div);
-    // console.log(players);
 });
-//
