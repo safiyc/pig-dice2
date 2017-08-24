@@ -1,3 +1,4 @@
+
 .activeClass {
   background-color: rgba(165, 192, 209, .50);
 }
@@ -16,19 +17,26 @@ img {
 }*/
 
 .top-content {
-  background-color: rgba(165, 192, 209, .50);
+  /*background-color: rgba(165, 192, 209, .50);*/
   text-align: center;
   height: 26vh;
   padding-top: 15%;
 }
 
 .bottom-content {
-  background-color: rgba(165, 192, 209, .50);
   margin-top: 15px;
 }
 
 html, body {
   height: 100vh;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.reset {
+  display: none;
 }
 
 .outer-wrapper {
@@ -39,10 +47,12 @@ html, body {
 }
 
 .player1 {
+  /*background-color: rgba(165, 192, 209, .50);*/
   /*margin-left: 20px;*/
   padding: 10px;
 }
 .player2 {
+  /*background-color: rgba(165, 192, 209, .50);*/
   /*margin-left: 20px;*/
   padding: 10px;
 }

@@ -1,6 +1,6 @@
 //Business Logic
 //Add player object
-function Player(name){
+function Player(name, score, turnTable){
   this.name = name;
   this.score = 0;
   this.turnTotal = 0;
@@ -54,21 +54,21 @@ $(function(){
 
     if(getActivePlayer().score >= scoreToWin){
       $('#dice').hide();
+      $('.roll').hide();
+      $('.pass').hide();
+      $('.reset').show();
       $('#p1-total').text(player1.score);
       $('#p1-current').text(player1.turnTotal);
       $('#p2-total').text(player2.score);
       $('#p2-current').text(player2.turnTotal);
-
       if(isP1Turn){
         $("#p1-results").text("You Win!");
-        var check1 = $('#dice').show().text("Player 1 Wins!");
-        console.log(check1);
         $("#p2-results").text("You Lose!");
+        $('#dice').show().text("Player 1 Wins!");
       } else {
         $("#p1-results").text("You Lose!");
         $("#p2-results").text("You Win!");
-        var check2 = $('#dice').show().text("Player 2 Wins!");
-        console.log(check2);
+        $('#dice').show().text("Player 2 Wins!");
       }
     } else {
       switchTurn();
